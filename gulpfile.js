@@ -1,11 +1,16 @@
 var gulp      = require('gulp');
 var data      = require('gulp-data');
 var path      = require('path');
-var connect   = require('gulp-connect')
 var jade      = require('gulp-jade');
 
-gulp.task('default',['jade','connect']);
+var browserSync = require('browser-sync');
+var reload      = browserSync.reload;
 
+gulp.task('default',['jade','browser-sync'], function () {
+    gulp.watch("templates/*.jade", ['jade']);
+});
+
+// Using templates with data from data folder
 gulp.task('jade', function() {
   gulp.src('./templates/*.jade')
     .pipe(data(function(file) {
@@ -14,13 +19,15 @@ gulp.task('jade', function() {
     .pipe(jade({
       pretty: true
     }))
-    .pipe(gulp.dest('public/'));
+    .pipe(gulp.dest('public/'))
+    .pipe(browserSync.reload({stream: true}));
 });
 
-gulp.task('connect', function () {
-  connect.server({
-    root: 'public/',
-    port: 8888
-  });
+// Static server
+gulp.task('browser-sync', function() {
+    browserSync({
+        server: {
+            baseDir: "./public"
+        }
+    });
 });
-
