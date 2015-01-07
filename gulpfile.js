@@ -1,11 +1,9 @@
 var gulp      = require('gulp');
-var data      = require('gulp-data');
 var path      = require('path');
-var jade      = require('gulp-jade');
-var sass      = require('gulp-sass');
 
 var requireDir  = require('require-dir');
 var dir = requireDir('./tasks', {recurse: true});
+var plugins = require('gulp-load-plugins')();
 
 
 gulp.task('default',['jade','sass','browser-sync'], function () {

@@ -1,18 +1,18 @@
 var gulp      = require('gulp');
-var data      = require('gulp-data');
 var path      = require('path');
-var jade      = require('gulp-jade');
 
 var browserSync = require('browser-sync');
 var reload      = browserSync.reload;
+var plugins = require('gulp-load-plugins')();
+
 
 // Using templates with data from data folder
 gulp.task('jade', function() {
   gulp.src('./templates/*.jade')
-    .pipe(data(function(file) {
+    .pipe(plugins.data(function(file) {
       return require('../data/' + path.basename(file.path) + '.json');
     }))
-    .pipe(jade({
+    .pipe(plugins.jade({
       pretty: true
     }))
     .pipe(gulp.dest('./public'))
