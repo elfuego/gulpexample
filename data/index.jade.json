@@ -1,6 +1,6 @@
 {
-  "project": { 
-               "name" : "My Project",
-               "greeting" : "Hello world"
-             }
+  "page": { 
+        "name" : "My homepage",
+        "content" : "Hello there..."
+    }
 }

@@ -1,0 +1,16 @@
+{
+    "project": { 
+        "name" : "My Project",
+        "greeting" : "Hello world!"
+    },
+    "navigation": [
+        {
+            "name": "Homepage",
+            "href": "index.html"
+        },       
+        {
+            "name": "News",
+            "href": "news.html"
+        }       
+    ]
+}

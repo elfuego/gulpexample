@@ -1,6 +1,6 @@
 Gulp Example Project
 ===========
-Example Project for demonstrating Gulp JS
+Example Project for demonstrating Gulp JS with the loading of some general site-wide configuration.
 
 ## Task jade
 Generate html from jade templates using gulp-data
@@ -13,4 +13,4 @@ file/folder| description
 gulpfile.js | tasks for gulp   
 package.json | dependencies for npm  
 templates/index.jade| jade template 
-sass/style.scss|sass file for styles
+less/style.less|less file for styles
