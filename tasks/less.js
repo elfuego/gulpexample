@@ -1,11 +1,11 @@
 var gulp      = require('gulp');
-var sass      = require('gulp-sass');
+var less      = require('gulp-less');
 
 var browserSync = require('browser-sync');
 
-gulp.task('sass', function () {
-    gulp.src('./sass/*.scss')
-        .pipe(sass())
+gulp.task('less', function () {
+    gulp.src('./less/*.less')
+        .pipe(less())
         .pipe(gulp.dest('./public/css'))
         .pipe(browserSync.reload({stream: true}));
 });
